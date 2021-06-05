@@ -14,7 +14,7 @@ namespace pandemic{
     class Board{
         public:
             Board();
-            static map<City,vector<City>> all_cities;
+            static map<City,vector<City>> cities;
             static map<City,Color> cities_by_color;
             set <City> station;
             set <Color> cure;

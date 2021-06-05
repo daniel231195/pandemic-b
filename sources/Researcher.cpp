@@ -9,7 +9,7 @@ using namespace pandemic;
         return *this;
     }
     int count=0;
-    for (const auto& i : my_cards){         
+    for (const auto& i : cards){         
         if (Board::cities_by_color[i] == color)
         {
             count++;
@@ -23,11 +23,11 @@ using namespace pandemic;
     // }
     if (count > 4)
     {
-        auto itr = my_cards.begin();
+        auto itr = cards.begin();
         while(count > 0){
             if (Board::cities_by_color[*itr] == color)
             {
-                    my_cards.erase(*itr++);
+                    cards.erase(*itr++);
                     count--;
             }
             else{
@@ -35,6 +35,7 @@ using namespace pandemic;
                 }     
             }
         board_of_player.cure.insert(color);
+        cout<<"Researcher discover_cure"<<endl;
         return *this;
     }
     throw std::out_of_range("Invalid move");

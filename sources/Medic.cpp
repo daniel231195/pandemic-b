@@ -9,6 +9,7 @@ Player& Medic::drive(City dest){
     {
         board_of_player[dest] = 0;
     }
+    cout<<"Medic drive to : "<<Board::enum_to_string(dest)<<endl;
     return *this;
 }
 
@@ -18,6 +19,7 @@ Player& Medic::fly_direct(City dest){
     {
         board_of_player[dest] = 0;
     }
+    cout<<"Medic fly_direct to :"<<Board::enum_to_string(dest)<<endl;
     return *this;
 }
 
@@ -27,6 +29,7 @@ Player& Medic::fly_charter(City dest){
     {
         board_of_player[dest] = 0;
     }
+    cout<<"Medic fly_charter to : "<<Board::enum_to_string(dest)<<endl;
     return *this;
 }
 
@@ -36,6 +39,7 @@ Player& Medic::fly_shuttle(City dest){
     {
         board_of_player[dest] = 0;
     }
+    cout<<"Medic fly_shuttle to : "<<Board::enum_to_string(dest)<<endl;
     return *this;
 }
 
@@ -45,6 +49,7 @@ Player& Medic::fly_shuttle(City dest){
         board_of_player.city_by_disease_level[dest] = 0;
        return *this;
     }
+    cout<<"Medic treat : "<<Board::enum_to_string(dest)<<endl;
     throw std::out_of_range("Invalid move");
 }
 

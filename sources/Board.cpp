@@ -7,7 +7,7 @@
 using namespace std;
 using namespace pandemic;   
 
-    map<City,vector<City>> Board::all_cities;
+    map<City,vector<City>> Board::cities;
     map<City,Color> Board::cities_by_color;
 
     Board::Board(){
@@ -31,7 +31,7 @@ using namespace pandemic;
                Neighbors=Neighbors.substr(Neighbors.find(' ')+1, right.length());
            }
            v.push_back(string_to_enum(Neighbors));
-           Board::all_cities[string_to_enum(CityName)]=v;
+           Board::cities[string_to_enum(CityName)]=v;
                 Color p = string_to_color(color);
                 Board::cities_by_color[string_to_enum(CityName)] = p;
         }
@@ -152,7 +152,112 @@ using namespace pandemic;
             return City::daniel;
         
     }
+    
+    string Board::enum_to_string(City c){
+        switch (c)
+        {
+            case City::Algiers:
+                return "Algiers";
+            case City::Atlanta:
+                return "Atlanta";
+            case City::Baghdad:
+                return "Baghdad";
+            case City::Bangkok:
+                return "Bangkok";
+            case City::Beijing:
+                return "Beijing";
+            case City::Bogota:
+                return "Bogota"; 
+            case City::BuenosAires:
+                return "BuenosAires";
+            case City::Cairo:
+                return "Cairo";
+            case City::Chennai: 
+                return "Chennai";
+            case City::Chicago :
+                return "Chicago";
+            case City::Delhi :
+                return "Delhi";
+            case City::Essen :  
+                return "Essen";
+            case City::HoChiMinhCity:
+                return "HoChiMinhCity";
+            case City::HongKong:
+                return "HongKong";
+            case City::Istanbul:
+                return "Istanbul";
+            case City::Jakarta: 
+                return "Jakarta";
+            case City::Johannesburg:
+                return "Johannesburg";
+            case City::Karachi:
+                return "Karachi";
+            case City::Khartoum:
+                return "Khartoum";
+            case City::Kinshasa :
+                return "Kinshasa";
+            case City::Kolkata :
+                return "Kolkata";
+            case City:: Lagos :
+                return "Lagos";
+            case City::Lima :
+                return "Lima";
+            case City::London:
+                return "London";
+            case City:: LosAngeles:
+                return "LosAngeles";
+            case City::Madrid:
+                return "Madrid";
+            case City:: Manila:
+                return "Manila";
+            case City::MexicoCity:
+                return "MexicoCity";
+            case City::Miami:
+                return "Miami";
+            case City::Milan:   
+                return "Milan";
+            case City::Montreal:
+                return "Montreal";
+            case City::Moscow:
+                return "Moscow";
+            case City::Mumbai:
+                return "Mumbai";
+            case City::NewYork:
+                return "NewYork";
+            case City::Osaka :
+                return "Osaka";
+            case City::Paris :
+                return "Paris";
+            case City:: Riyadh :    
+                return "Riyadh";
+            case City::SanFrancisco:
+                return "SanFrancisco";
+            case City::Santiago :
+                return "Santiago";
+            case City::SaoPaulo :
+                return "SaoPaulo";
+            case City::Seoul :
+                return "Seoul";
+            case City::Shanghai:
+                return "Shanghai";
+            case City::StPetersburg:
+                return "StPetersburg";
+            case City::Sydney :
+                return "Sydney";
+            case City::Taipei :
+                return "Taipei";
+            case City::Tehran :
+                return "Tehran";
+            case City::Tokyo :
+                return "Tokyo";
+            case City::Washington:
+                return "Washington";
 
+            default:
+                break;
+        }
+        return "  ";
+    }
 
     bool Board::is_clean(){
         for(auto &i : city_by_disease_level){

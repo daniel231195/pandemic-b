@@ -11,18 +11,18 @@ Player& Scientist::discover_cure(Color color){
         }
 
         int count=0;
-        for (const auto& i : my_cards){        
+        for (const auto& i : cards){        
             if (Board::cities_by_color[i] == color)
             {
                 count++;
             }
         }
         if (count >= num_cards){
-            auto itr = my_cards.begin();
+            auto itr = cards.begin();
             while(count > 0){
                 if (Board::cities_by_color[*itr] == color)
                 {
-                    my_cards.erase(*itr++);
+                    cards.erase(*itr++);
                     count--;
                 }
                 else{
@@ -30,6 +30,7 @@ Player& Scientist::discover_cure(Color color){
                 }  
             }
             board_of_player.cure.insert(color);
+             cout<<"Scientist discover_cure"<<endl;
             return *this;
         }      
     }

@@ -16,7 +16,7 @@ namespace pandemic{
         protected:
             Board& board_of_player;
             City current_city;
-            set <City> my_cards;
+            set <City> cards;
             
 
         public:

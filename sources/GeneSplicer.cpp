@@ -10,15 +10,16 @@ Player& GeneSplicer::discover_cure(Color color){
         {
             return *this;
         }
-        if (my_cards.size() > 4)  
+        if (cards.size() > 4)  
         {   
-            auto itr = my_cards.begin();
+            auto itr = cards.begin();
             for (size_t i = 0; i < MIN_CARDS; i++)
             {
-                my_cards.erase(*itr);
+                cards.erase(*itr);
             }
             
             board_of_player.cure.insert(color);
+            cout<<"GeneSplicer discover_cure"<<endl;
             return *this;   
         }
     }
